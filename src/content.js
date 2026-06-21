@@ -105,26 +105,41 @@ export const projects = [
   },
 ];
 
-// Scrolling marquee of your wider toolset. `Icon` is optional — items without
+// Wider toolbox, grouped into categories. `Icon` is optional — items without
 // a brand icon simply render as a text pill.
-export const ticker = [
-  { label: 'NumPy', Icon: SiNumpy },
-  { label: 'Matplotlib' },
-  { label: 'Flask', Icon: SiFlask },
-  { label: 'Spark SQL', Icon: SiApachespark },
-  { label: 'Spark MLlib', Icon: SiApachespark },
-  { label: 'HDFS', Icon: SiApachehadoop },
-  { label: 'YARN', Icon: SiApachehadoop },
-  { label: 'Git', Icon: SiGit },
-  { label: 'GitLab', Icon: SiGitlab },
-  { label: 'Linux', Icon: SiLinux },
-  { label: 'SSH' },
-  { label: 'Stripe', Icon: SiStripe },
-  { label: 'Postman', Icon: SiPostman },
-  { label: 'WordPress', Icon: SiWordpress },
-  { label: 'Agile / Scrum', Icon: SiScrumalliance },
-  { label: 'REST APIs' },
-  { label: 'Office 365' },
+export const toolbox = [
+  {
+    group: 'Data & Analytics',
+    items: [
+      { label: 'NumPy', Icon: SiNumpy },
+      { label: 'Matplotlib' },
+      { label: 'Spark SQL', Icon: SiApachespark },
+      { label: 'Spark MLlib', Icon: SiApachespark },
+      { label: 'HDFS', Icon: SiApachehadoop },
+      { label: 'YARN', Icon: SiApachehadoop },
+    ],
+  },
+  {
+    group: 'Web & APIs',
+    items: [
+      { label: 'Flask', Icon: SiFlask },
+      { label: 'REST APIs' },
+      { label: 'Stripe', Icon: SiStripe },
+      { label: 'WordPress', Icon: SiWordpress },
+    ],
+  },
+  {
+    group: 'DevOps & Tools',
+    items: [
+      { label: 'Git', Icon: SiGit },
+      { label: 'GitLab', Icon: SiGitlab },
+      { label: 'Linux', Icon: SiLinux },
+      { label: 'SSH' },
+      { label: 'Postman', Icon: SiPostman },
+      { label: 'Agile / Scrum', Icon: SiScrumalliance },
+      { label: 'Office 365' },
+    ],
+  },
 ];
 
 export const nav = [

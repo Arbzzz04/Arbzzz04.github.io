@@ -649,96 +649,87 @@
 }
 
 /* ============================================================
-   Tech ticker (two-row scrolling marquee of pills)
+   Toolbox (static categorized grid of tech pills)
    ============================================================ */
-.ticker {
-  position: relative;
-  overflow: hidden;
-  border-block: 1px solid var(--border);
-  padding-block: clamp(28px, 5vw, 44px);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+.toolbox {
+  padding-block: clamp(44px, 7vw, 84px);
 }
 
-.ticker__row {
-  /* Vertical room so the hover lift isn't clipped. Horizontal overflow is
-     clipped by the parent .ticker, so the row itself must not clip. */
-  padding-block: 5px;
+.toolbox__intro {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: clamp(30px, 4vw, 48px);
 }
 
-.ticker__row + .ticker__row {
-  margin-top: 10px;
+.toolbox__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(28px, 5vw, 52px);
 }
 
-.ticker__track {
-  display: inline-flex;
-  align-items: center;
-  width: max-content;
+.toolbox__heading {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
 }
 
-.ticker__track--left {
-  animation: ticker-scroll 44s linear infinite;
-}
-
-.ticker__track--right {
-  animation: ticker-scroll 44s linear infinite reverse;
-}
-
-.ticker__row:hover .ticker__track {
-  animation-play-state: paused;
-}
-
-.ticker__item {
-  display: inline-flex;
-  align-items: center;
+.toolbox__pills {
+  display: flex;
+  flex-wrap: wrap;
   gap: 9px;
-  margin-inline: 7px;
-  padding: 9px 16px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--surface);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-muted);
   white-space: nowrap;
+  /* Entrance (opacity/transform) is staggered via --reveal-delay; the hover
+     lift uses `translate` with no delay so the two animations never collide. */
   transition:
+    opacity 0.55s var(--ease) var(--reveal-delay, 0ms),
+    transform 0.55s var(--ease) var(--reveal-delay, 0ms),
+    translate 0.2s var(--ease),
     color 0.2s var(--ease),
     border-color 0.2s var(--ease),
-    background-color 0.2s var(--ease),
-    transform 0.2s var(--ease);
+    background-color 0.2s var(--ease);
 }
 
-.ticker__item:hover {
+.pill:hover {
   color: var(--text);
   border-color: var(--accent);
-  transform: translateY(-2px);
+  translate: 0 -2px;
 }
 
-.ticker__icon {
-  width: 17px;
-  height: 17px;
+.pill__icon {
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
   color: inherit;
   opacity: 0.8;
 }
 
-.ticker__item:hover .ticker__icon {
+.pill:hover .pill__icon {
   color: var(--accent);
   opacity: 1;
 }
 
-@keyframes ticker-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ticker__track--left,
-  .ticker__track--right {
-    animation: none;
+@media (max-width: 760px) {
+  .toolbox__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 }
