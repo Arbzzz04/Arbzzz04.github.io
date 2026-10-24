@@ -83,6 +83,13 @@ export const projects = [
     link: 'https://github.com/Arbzzz04/spark-massive-scale-analytics',
   },
   {
+    icon: '🧾',
+    title: 'Financial Transaction Reconciliation Engine',
+    desc: 'Reconciles a company ledger against its bank statement, matching transactions and explaining every difference: fees, rounding, payment delays, missing entries, duplicates, and batch settlements. Matching logic is written in SQL on DuckDB and reaches an F1 score of 0.999 on test data.',
+    tags: ['SQL', 'DuckDB', 'Python', 'Streamlit'],
+    link: 'https://github.com/Arbzzz04/financial-reconciliation',
+  },
+  {
     icon: '🍽️',
     title: 'Restaurant Web Application',
     desc: 'Agile (Scrum) team project delivering customer ordering and staff workflows (kitchen → waiter). Built and validated a Stripe payments backend with Postman to ensure reliable end-to-end integration.',
