@@ -25,7 +25,7 @@ import {
 export const profile = {
   name: 'Arbaaz Ali Jaffer',
   shortName: 'Arbaaz Jaffer',
-  role: 'Data Analyst & Software Developer',
+  role: 'Data Engineer & Software Developer',
   tagline:
     'Recent BSc Computer Science graduate from Royal Holloway, turning data and logic into impactful solutions — from distributed Spark pipelines to full-stack web apps.',
   status: 'Open to new opportunities',
