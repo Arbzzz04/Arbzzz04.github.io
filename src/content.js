@@ -80,7 +80,7 @@ export const projects = [
     title: 'Massive-Scale Data Analysis with Apache Spark',
     desc: 'Final-year project: distributed data-processing pipelines on a university cluster. Implemented Word Count, Distributed Grep, Statistical Analysis, and K-Means with performance benchmarking across cluster configurations.',
     tags: ['PySpark', 'Spark SQL', 'Spark MLlib', 'HDFS / YARN'],
-    link: '',
+    link: 'https://github.com/Arbzzz04/spark-massive-scale-analytics',
   },
   {
     icon: '🍽️',
